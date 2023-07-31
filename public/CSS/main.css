@@ -1,0 +1,92 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-image: url("../Pictures/backgrounds/paluna.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+canvas {
+
+  position: absolute;
+  z-index: 99;
+}
+
+
+
+.roadBg {
+  position: absolute;
+  width: 1110px;
+}
+
+
+img.roadBg:nth-child(2) {
+  top: 645px;
+}
+
+#buttons {
+  top: 600px !important;
+  z-index: 10 !important;
+}
+
+.bet_display {
+  position: absolute;
+  z-index: -1;
+
+
+}
+
+.game_display {
+  top: 150px;
+  position: absolute;
+  text-align: center;
+
+
+  z-index: -1;
+  font-family: "TheBlacklist";
+}
+
+.button_display {
+  top: 700px;
+  position: absolute;
+
+
+  z-index: -1;
+  font-family: "Chela";
+}
+
+#account {
+  /* visibility: hidden; */
+  padding-top: 25px;
+  color: white;
+  text-align: center;
+  font-family: "Chela";
+  height: 100px;
+  font-size: 32px;
+  width: 800px;
+  /* position:absolute; */
+
+  top: 88%;
+  position: absolute;
+  background: #0b315e;
+  border-radius: 15px;
+  border: 1px solid #f3d647;
+  /* background-color: blue; */
+  z-index: 1;
+}
+
+.header {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  font-family: "TheBlacklist";
+}
+
+.betInfo {
+  text-align: center;
+  margin-right: 35px;
+  margin-left: 35px;
+}
+
