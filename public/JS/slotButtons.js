@@ -66,14 +66,14 @@ const buttons = [
     {
       name: "LeftArrowRed",
       x: sideArrowXLoc + 200,
-      y: NumLinesYLoc - 20,
+      y: NumLinesYLoc ,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Num Lines
     {
       name: "RightArrowRed",
       x: sideArrowXLoc + sideArrowDif + 200,
-      y: NumLinesYLoc - 20,
+      y: NumLinesYLoc ,
       w: sideArrowSize,
       h: sideArrowSize,
     },
@@ -98,6 +98,7 @@ const buttons = [
       w: mainButtonWidth,
       h: mainButtonHeight,
     },
+    
  
     // {
     //   name: "RedOval",
@@ -118,6 +119,7 @@ const btnImgsPromArr = returnPromiseImgArr(
 Promise.all(btnImgsPromArr).then(function () {
   drawButtons();
   writeText.writeHeaders();
+  addClickListeners();
 });
 
 function getMousePos(canvas, evt) {
@@ -139,6 +141,7 @@ function isInside(pos, rect) {
 
 function drawButtons() {
   let len = imgLocs.length;
+  
   for (let i = 0; i < len; i++) {
     ctxBtn.drawImage(
       imgList[imgLocs[i].name],
@@ -147,8 +150,51 @@ function drawButtons() {
       imgLocs[i].w,
       imgLocs[i].h
     );
+    if (imgLocs[i].name === "spin") {
+      // Apply the heartbeat animation to the "spin.png" image
+      // const spinImage = imgList[imgLocs[i].name];
+      // spinImage.style.animation = "heartBeatSpin 1s infinite";
+      // spinImage.style.position = "absolute";
+      // spinImage.style.left = imgLocs[i].x + "px";
+      // spinImage.style.top = imgLocs[i].y + "px";
+      // spinImage.style.width = imgLocs[i].w + "px";
+      // spinImage.style.height = imgLocs[i].h + "px";
+      // canvasButtons.parentElement.appendChild(spinImage);
+    } else {
+      // ctxBtn.drawImage(
+      //   imgList[imgLocs[i].name],
+      //   imgLocs[i].x ,
+      //   imgLocs[i].y,
+      //   imgLocs[i].w,
+      //   imgLocs[i].h
+      // );
+    }
+  }
+  
+}
+
+
+function addClickListeners() {
+  canvasButtons.addEventListener("click", function (evt) {
+    let mousePos = getMousePos(canvasButtons, evt);
+    if (isInside(mousePos, imgLocs[6])) {
+      toggleHeartBeatAnimation();
+      setTimeout(() => {
+        toggleHeartBeatAnimation()
+      }, 1000);
+    }
+  });
+}
+
+function toggleHeartBeatAnimation() {
+  const spinImage = imgList["spin"];
+  if (spinImage.style.animationPlayState === "running") {
+    spinImage.style.animationPlayState = "paused"; // Stop the animation
+  } else {
+    spinImage.style.animationPlayState = "running"; // Start the animation
   }
 }
+
 
 const writeText = (function () {
   const fontSize = sideArrowSize - 1;

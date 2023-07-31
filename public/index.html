@@ -43,7 +43,7 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
+<!-- 
     <style media="screen">
       body {
         background: #eceff1;
@@ -106,7 +106,7 @@
           border-top: 16px solid #ffa100;
         }
       }
-    </style>
+    </style> -->
   </head>
   <body onload="displayAllBetInfo();">
     <img class="roadBg" src="./Pictures/backgrounds/roadKings.png" />
@@ -136,7 +136,12 @@
         <div id="payout" class="betInfo"></div>
       </div>
     </div>
-
+  
+    <!-- <button id="showPopupBtn">Показати Popup</button> -->
+    <div class="overlay" id="popupOverlay">
+      <img src="./Pictures/paluna 17.png" alt="winner_screen_Car_img" class="winner_screen_img" >
+      <img src="./Pictures/Group 8(1).png" alt="text:Winner" class="winner_screen_img winner_second_section">
+    </div>
     <link rel="stylesheet" type="text/css" href="CSS/Chela/chelafont.css" />
     <link rel="stylesheet" type="text/css" href="CSS/TheBlacklist/font.css" />
     <link rel="stylesheet" type="text/css" href="CSS/main.css" />
@@ -150,6 +155,7 @@
     <script src="JS/gamePlay.js"></script>
     <!-- <script src="JS/cryptoSlotButtons.js"></script> -->
     <script src="JS/slotButtons.js"></script>
+    <script src="JS/winner.js"></script>
     <!-- <script src="JS/bonusGamesAnimation.js"></script> -->
     <!-- <script src="JS/bonusGames.js"></script> -->
     <script>
