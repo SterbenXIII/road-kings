@@ -1,26 +1,25 @@
 body {
-  min-height: 100vh;
+  min-height: 1200px;
   display: flex;
   justify-content: center;
   align-content: center;
   background-image: url("../Pictures/backgrounds/paluna.png");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; 
+  background-size: cover;
+  overflow-x: hidden;
+  width: 100vw;
+  position: relative;
 }
 canvas {
-
   position: absolute;
   z-index: 99;
 }
-
-
 
 .roadBg {
   position: absolute;
   width: 1110px;
 }
-
 
 img.roadBg:nth-child(2) {
   top: 645px;
@@ -34,15 +33,12 @@ img.roadBg:nth-child(2) {
 .bet_display {
   position: absolute;
   z-index: -1;
-
-
 }
 
 .game_display {
   top: 150px;
   position: absolute;
   text-align: center;
-
 
   z-index: -1;
   font-family: "TheBlacklist";
@@ -51,7 +47,6 @@ img.roadBg:nth-child(2) {
 .button_display {
   top: 700px;
   position: absolute;
-
 
   z-index: -1;
   font-family: "Chela";
@@ -68,13 +63,17 @@ img.roadBg:nth-child(2) {
   width: 800px;
   /* position:absolute; */
 
-  top: 88%;
+  top: 73%;
   position: absolute;
   background: #0b315e;
   border-radius: 15px;
   border: 1px solid #f3d647;
   /* background-color: blue; */
   z-index: 1;
+
+  position: absolute; /* Встановлюємо абсолютне позиціонування для контейнера */
+  bottom: 0; /* Прижимаємо контейнер до нижньої межі батьківського блоку (body) */
+  padding: 20px; /* Додаємо відступи для зручності */
 }
 
 .header {
@@ -89,4 +88,3 @@ img.roadBg:nth-child(2) {
   margin-right: 35px;
   margin-left: 35px;
 }
-
