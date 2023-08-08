@@ -27,7 +27,7 @@ const mainButtonHeight = (cWidth * 130) / 1300,
   sideArrowDif = (cWidth * 125) / 1000,
   sideArrowSize = (cWidth * 25) / 1000;
 
-const mainButtonXLoc = (cWidth - mainButtonWidth) /1.1,
+const mainButtonXLoc = (cWidth - mainButtonWidth) / 1,
   mainButtonYLoc = (ctxBtnHeight - mainButtonHeight) / 1.2,
   ovalXLoc = cWidth * 0.7,
   greenOvalYLoc = greenOvalHeight * 1.5,
@@ -46,13 +46,13 @@ const buttons = [
     "BlueTriangleUpDown.png",
     "RedOval.png",
     "GreenOval.png",
-    "spin.png"
+    "spin.png",
   ],
   imgLocs = [
     {
       name: "LeftArrowRed",
       x: sideArrowXLoc / 0,
-      y: lineBetYLoc  + 84,
+      y: lineBetYLoc + 84,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Line Bet
@@ -66,14 +66,14 @@ const buttons = [
     {
       name: "LeftArrowRed",
       x: sideArrowXLoc + 200,
-      y: NumLinesYLoc ,
+      y: NumLinesYLoc,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Num Lines
     {
       name: "RightArrowRed",
       x: sideArrowXLoc + sideArrowDif + 200,
-      y: NumLinesYLoc ,
+      y: NumLinesYLoc,
       w: sideArrowSize,
       h: sideArrowSize,
     },
@@ -93,13 +93,12 @@ const buttons = [
     },
     {
       name: "spin",
-      x: mainButtonXLoc,
+      x: 639,
       y: mainButtonYLoc,
       w: mainButtonWidth,
       h: mainButtonHeight,
     },
-    
- 
+
     // {
     //   name: "RedOval",
     //   x: ovalXLoc,
@@ -131,25 +130,37 @@ function getMousePos(canvas, evt) {
 }
 
 function isInside(pos, rect) {
+  console.log("✅ rect    ", rect);
+
   return (
-    pos.x > rect.x &&
-    pos.x < rect.x + rect.w &&
-    pos.y < rect.y + rect.h &&
-    pos.y > rect.y
+    pos.x > rect?.x &&
+    pos.x < rect?.x + rect?.w &&
+    pos.y < rect?.y + rect?.h &&
+    pos.y > rect?.y
   );
 }
 
 function drawButtons() {
   let len = imgLocs.length;
-  
+
   for (let i = 0; i < len; i++) {
-    ctxBtn.drawImage(
-      imgList[imgLocs[i].name],
-      imgLocs[i].x ,
-      imgLocs[i].y,
-      imgLocs[i].w,
-      imgLocs[i].h
-    );
+    if (i === 6) {
+      ctxBtn.drawImage(
+        imgList[imgLocs[i].name],
+        imgLocs[i].x + 150,
+        imgLocs[i].y,
+        imgLocs[i].w,
+        imgLocs[i].h
+      );
+    } else {
+      ctxBtn.drawImage(
+        imgList[imgLocs[i].name],
+        imgLocs[i].x,
+        imgLocs[i].y,
+        imgLocs[i].w,
+        imgLocs[i].h
+      );
+    }
     if (imgLocs[i].name === "spin") {
       // Apply the heartbeat animation to the "spin.png" image
       // const spinImage = imgList[imgLocs[i].name];
@@ -170,9 +181,7 @@ function drawButtons() {
       // );
     }
   }
-  
 }
-
 
 function addClickListeners() {
   canvasButtons.addEventListener("click", function (evt) {
@@ -180,7 +189,7 @@ function addClickListeners() {
     if (isInside(mousePos, imgLocs[6])) {
       toggleHeartBeatAnimation();
       setTimeout(() => {
-        toggleHeartBeatAnimation()
+        toggleHeartBeatAnimation();
       }, 1000);
     }
   });
@@ -195,12 +204,11 @@ function toggleHeartBeatAnimation() {
   }
 }
 
-
 const writeText = (function () {
   const fontSize = sideArrowSize - 1;
 
-  const lineBetDisplayX = sideArrowXLoc + (sideArrowSize + sideArrowDif) * 1.80,
-   lineBetDisplayX2 = sideArrowXLoc + (sideArrowSize + sideArrowDif) * 1.80,
+  const lineBetDisplayX = sideArrowXLoc + (sideArrowSize + sideArrowDif) * 1.8,
+    lineBetDisplayX2 = sideArrowXLoc + (sideArrowSize + sideArrowDif) * 1.8,
     lineBetTextY = imgLocs[0].y + fontSize + textShiftY * 10,
     numLinesTextY1 = imgLocs[3].y + fontSize + textShiftY / 14,
     numLinesTextY2 = imgLocs[3].y + 2 * fontSize + textShiftY / 2,
@@ -214,8 +222,6 @@ const writeText = (function () {
   ctxBtn.textAlign = "center";
   ctxBtn.fillStyle = "white";
   ctxBtn.strokeStyle = "black";
-  
-
 
   function fillAndStroke(text, xLoc, yLoc) {
     ctxBtn.fillText(text, xLoc, yLoc);
@@ -282,7 +288,10 @@ canvasButtons.addEventListener(
   "mousedown",
   function (evt) {
     let mousePos = getMousePos(canvasButtons, evt);
+    console.log("✅ isInside(mousePos, imgLocs[0] )   ", mousePos);
+
     if (isInside(mousePos, imgLocs[0])) {
+      console.log("✅ 1    ", 1);
       spinSlots();
     } else if (isInside(mousePos, imgLocs[1])) {
       incLineBet();
@@ -305,13 +314,15 @@ canvasButtons.addEventListener(
       writeText.displayAutoGames(numAutoGames);
       displayBet();
     } else if (isInside(mousePos, imgLocs[6])) {
+      console.log("✅ 1    ", 1);
+
       spinSlots();
     } else if (
       isInside(mousePos, imgLocs[7]) &&
       totalBet * numAutoGames <= balance
     ) {
       autoPlay();
-    } 
+    }
     // else if (isInside(mousePos, imgLocs[8])) {
     //   setMaxBet();
     //   writeText.displayNumLines();

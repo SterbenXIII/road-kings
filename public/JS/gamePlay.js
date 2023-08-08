@@ -100,6 +100,10 @@ function findWinners() {
         break;
       }
     }
+    console.log('✅ winningReels    ', winningReels)
+    console.log('✅ tilesInLineArr    ', tilesInLineArr)
+    console.log('✅ winningLines    ', winningLines)
+    
   }
 }
 

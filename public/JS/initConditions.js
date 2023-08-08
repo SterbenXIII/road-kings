@@ -5,10 +5,13 @@
 //   cDisplayHeight = 150,
 //   frameThickness = 5;
 
-const cWidth = Math.floor(1000),
-  cHeight = Math.floor((cWidth * 5) / 8),
-  cDisplayHeight = Math.floor((cWidth * 3) / 16),
-  frameThickness = Math.floor((cWidth * 1) / 160);
+const screenWidth = 1000;
+const screenHeight = window.innerHeight;
+
+const cWidth = Math.floor(screenWidth);
+const cHeight = Math.floor((cWidth * 5) / 8);
+const cDisplayHeight = Math.floor((cWidth * 3) / 16);
+const frameThickness = Math.floor((cWidth * 1) / 160);
 
 let numPics = 8;
 
@@ -17,8 +20,9 @@ const slotWidths = [
   Math.floor(cWidth / 6),
   Math.floor(cWidth / 6),
   Math.floor(cWidth / 6),
-  Math.floor(cWidth / 6 ),
+  Math.floor(cWidth / 6),
 ];
+
 const slotFrames = slotWidths.map((width) =>
   Math.floor((width * frameThickness) / 100)
 );

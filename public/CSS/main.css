@@ -1,7 +1,9 @@
+html {
+  height: 100%;
+}
 body {
   min-height: 1200px;
   display: flex;
-  justify-content: center;
   align-content: center;
   background-image: url("../Pictures/backgrounds/paluna.png");
   background-position: center; /* Center the image */
@@ -18,12 +20,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-z-index: 999999;
+  z-index: 999999;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup {
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,7 +52,6 @@ z-index: 999999;
   transform: translate(-50%, -50%);
 }
 
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -74,7 +74,6 @@ z-index: 999999;
     transform: scale(1);
   }
 }
-
 
 @keyframes heartBeatSpin {
   0% {
@@ -177,4 +176,42 @@ img.roadBg:nth-child(2) {
   text-align: center;
   margin-right: 35px;
   margin-left: 35px;
+}
+
+@media screen and (max-width: 800px) {
+  /* main.css | http://127.0.0.1:5500/public/CSS/main.css */
+
+  .roadBg {
+    /* width: 1110px; */
+    width: 800px;
+  }
+
+  .game_display {
+    /* top: 150px; */
+    top: 110px;
+    width: 38%;
+    height: 38%;
+  }
+
+  .roadBg {
+    /* width: 1110px; */
+    width: 800px;
+  }
+
+  .game_display {
+    /* top: 150px; */
+    top: 110px;
+    width: 38%;
+    height: 38%;
+    left: 10px;
+  }
+
+  img.roadBg:nth-child(2) {
+    top: 460px;
+  }
+  #buttons {
+    top: 421px !important;
+    z-index: 10 !important;
+    width: 37%;
+  }
 }
