@@ -93,8 +93,8 @@ const buttons = [
     },
     {
       name: "spin",
-      x: 639,
-      y: mainButtonYLoc,
+      x: 472,
+      y: mainButtonYLoc - 20,
       w: mainButtonWidth,
       h: mainButtonHeight,
     },
@@ -147,8 +147,8 @@ function drawButtons() {
     if (i === 6) {
       ctxBtn.drawImage(
         imgList[imgLocs[i].name],
-        imgLocs[i].x + 150,
-        imgLocs[i].y,
+        imgLocs[i].x + 300,
+        imgLocs[i].y + 20,
         imgLocs[i].w,
         imgLocs[i].h
       );

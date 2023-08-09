@@ -10,7 +10,7 @@ body {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
   overflow-x: hidden;
-  width: 2000px;
+  /* width: 2000px; */
   position: relative;
 }
 .overlay {
@@ -178,6 +178,22 @@ img.roadBg:nth-child(2) {
   margin-left: 35px;
 }
 
+.game_display {
+  left: 10px;
+  width: 53%;
+  }
+
+  body {
+
+    transform: scale(0.8);
+  }
+  
+/* main.css | http://127.0.0.1:5500/public/CSS/main.css */
+
+
+
+
+
 @media screen and (max-width: 800px) {
   /* main.css | http://127.0.0.1:5500/public/CSS/main.css */
 
@@ -214,4 +230,25 @@ img.roadBg:nth-child(2) {
     z-index: 10 !important;
     width: 37%;
   }
+}
+
+@media screen and (max-width: 800px) {
+  .game_display {
+    /* width: 38%; */
+    width: 100%;
+  }
+}
+
+/* main.css | http://127.0.0.1:5500/public/CSS/main.css */
+
+@media screen and (max-width: 800px) {
+  #buttons {
+    /* width: 37%; */
+    width: 95%;
+  }
+}
+
+#account {
+  /* top: 73%; */
+  top: 51%;
 }
