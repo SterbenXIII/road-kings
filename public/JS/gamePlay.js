@@ -88,14 +88,10 @@ function findWinners() {
         payout = payouts[j - 3][tilesInLine[0]] * betPerLine;
         console.log("You won " + payout);
 
-        setTimeout(() => {
-          showPopup()
-        }, 3000);
+        showPopup()
         break; //prevents double/triple counting of 4/3 in a row winners
       } else if (tilesInLine.length == 2 && tilesInLine[0] == 0) {
-        setTimeout(() => {
-          showPopup()
-        }, 3000);
+        showPopup()
         winningLines.push(lineNum);
         winningReels.push(j);
         console.log("Winner on line " + (lineNum + 1) + " with wilds");

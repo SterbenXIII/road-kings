@@ -6,10 +6,10 @@ function showPopup() {
   popupOverlay.style.display = 'block';
   setTimeout(() => {
     popupOverlay.querySelector('.popup').style.display = 'block';
-  }, 3000);
+  }, 5000);
   setTimeout(() => {
     closePopup();
-  }, 6000); // Закриваємо popup після 5 секунд (5000 мілісекунд)
+  }, 8000); // Закриваємо popup після 5 секунд (5000 мілісекунд)
 }
 
 function closePopup() {
