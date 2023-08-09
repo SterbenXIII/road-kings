@@ -125,7 +125,7 @@ img.roadBg:nth-child(2) {
 }
 
 .game_display {
-  top: 150px;
+  top: 110px;
   position: absolute;
   text-align: center;
 
@@ -179,7 +179,7 @@ img.roadBg:nth-child(2) {
 }
 
 .game_display {
-  left: 10px;
+  left: 25px;
   width:1050px;
   }
 
