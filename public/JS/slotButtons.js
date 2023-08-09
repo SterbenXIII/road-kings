@@ -51,42 +51,42 @@ const buttons = [
   imgLocs = [
     {
       name: "LeftArrowRed",
-      x: sideArrowXLoc / 0,
+      x: sideArrowXLoc / 0 - 100000,
       y: lineBetYLoc + 84,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Line Bet
     {
-      name: "RightArrowRed",
-      x: sideArrowXLoc + sideArrowDif / 0,
-      y: lineBetYLoc + 84,
+      name: "RightArrowRed" ,
+      x: sideArrowXLoc - 100000 + sideArrowDif / 0,
+      y: lineBetYLoc + 84 - 100000,
       w: sideArrowSize,
       h: sideArrowSize,
     },
     {
       name: "LeftArrowRed",
-      x: sideArrowXLoc + 200,
+      x: sideArrowXLoc + 200 - 100000,
       y: NumLinesYLoc,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Num Lines
     {
       name: "RightArrowRed",
-      x: sideArrowXLoc + sideArrowDif + 200,
+      x: sideArrowXLoc + sideArrowDif + 200 - 100000,
       y: NumLinesYLoc,
       w: sideArrowSize,
       h: sideArrowSize,
     },
     {
       name: "LeftArrowRed",
-      x: ovalXLoc,
+      x: ovalXLoc - 100000,
       y: lineBetYLoc + 60,
       w: sideArrowSize,
       h: sideArrowSize,
     }, //Auto Play Games
     {
       name: "RightArrowRed",
-      x: ovalXLoc + greenOvalWidth - sideArrowSize,
+      x: ovalXLoc + greenOvalWidth - sideArrowSize - 100000,
       y: lineBetYLoc + 60,
       w: sideArrowSize,
       h: sideArrowSize,
@@ -229,18 +229,18 @@ const writeText = (function () {
   }
 
   function writeHeaders() {
-    ctxBtn.font = fontSize + "px Chela";
+    // ctxBtn.font = fontSize + "px Chela";
     // fillAndStroke("Line Bet", lineBetDisplayX, lineBetTextY);
 
-    fillAndStroke("Number of Lines", lineBetDisplayX, numLinesTextY2);
+    // fillAndStroke("Number of Lines", lineBetDisplayX, numLinesTextY2);
     // fillAndStroke("Auto Play", rightBtnTextX, autoPlayTextY);
     // fillAndStroke("Max Bet", rightBtnTextX, maxBetTextY);
-    ctxBtn.font = fontSize * 2 + "px Chela";
+    // ctxBtn.font = fontSize * 2 + "px Chela";
     // fillAndStroke("Spin", spinBtnTextX, spinBtnTextY);
 
-    displayNumLines();
-    displayLineBet();
-    displayAutoGames();
+    // displayNumLines();
+    // displayLineBet();
+    // displayAutoGames();
   }
 
   function displayNumLines() {
