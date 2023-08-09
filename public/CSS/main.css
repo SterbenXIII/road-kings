@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 body {
-  min-height: 1200px;
+  /* min-height: 1200px; */
   display: flex;
   align-content: center;
   background-image: url("../Pictures/backgrounds/paluna.png");
@@ -185,7 +185,7 @@ img.roadBg:nth-child(2) {
 
   body {
 
-    transform: scale(0.8);
+    transform: scale(0.6);
   }
   #account {
     /* top: 73%; */
