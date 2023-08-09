@@ -93,7 +93,7 @@ const buttons = [
     },
     {
       name: "spin",
-      x: 472,
+      x: 520,
       y: mainButtonYLoc - 20,
       w: mainButtonWidth,
       h: mainButtonHeight,
@@ -147,8 +147,8 @@ function drawButtons() {
     if (i === 6) {
       ctxBtn.drawImage(
         imgList[imgLocs[i].name],
-        imgLocs[i].x + 300,
-        imgLocs[i].y + 20,
+        imgLocs[i].x + 200,
+        imgLocs[i].y,
         imgLocs[i].w,
         imgLocs[i].h
       );
@@ -284,14 +284,20 @@ const writeText = (function () {
   };
 })();
 
+
+canvasButtons.addEventListener("mousedown", () => {
+  spinSlots();
+})
 canvasButtons.addEventListener(
   "mousedown",
   function (evt) {
     let mousePos = getMousePos(canvasButtons, evt);
-    console.log("✅ isInside(mousePos, imgLocs[0] )   ", mousePos);
 
+    spinSlots();
+
+    
     if (isInside(mousePos, imgLocs[0])) {
-      console.log("✅ 1    ", 1);
+
       spinSlots();
     } else if (isInside(mousePos, imgLocs[1])) {
       incLineBet();
